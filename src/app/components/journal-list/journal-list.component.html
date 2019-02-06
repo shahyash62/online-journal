@@ -1,0 +1,13 @@
+<div class="bg-light text-dark rounded" id="journal-list">
+    <ul *ngFor="let journal of journals" class="list-group">
+        <a href="#" id="journal-links">
+            <li class="list-group-item h5 delay-2" id="journal-title">
+                {{ journal.title }}
+            </li>
+            <ul class="list-group-item delay-2">
+                <li class="list-group-item delay-2" id="journal-content">{{ journal.content }}</li>
+                <li class="list-group-item delay-2">{{ journal.date | date:'medium'}}</li>
+            </ul>
+        </a>
+    </ul>
+</div>

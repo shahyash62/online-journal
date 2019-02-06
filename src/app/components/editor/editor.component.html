@@ -1,0 +1,13 @@
+<form>
+    <div id="flex-container-row">
+        <div id="flex-child-heading">
+            <h4 class="border border-left-0 border-right-0 border-top-0 border-dark text-dark">Journal Entry</h4>
+        </div>
+        <div id="flex-child-buttons">
+            <button *ngIf="!journalSelected" class="btn btn-outline-dark btn-sm ml-3">Add Entry</button>
+            <button *ngIf="journalSelected" class="btn btn-outline-dark btn-sm ml-3">Update Entry</button>
+            <button *ngIf="journalSelected" class="btn btn-outline-dark btn-sm ml-3">Delete Entry</button>
+        </div>
+    </div>
+    <textarea id="journal-textarea" class="rounded text-dark h-100"></textarea>
+</form>
