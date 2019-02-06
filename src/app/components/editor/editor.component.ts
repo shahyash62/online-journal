@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JournalService } from 'src/app/services/journal.service';
 
 @Component({
   selector: 'app-editor',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorComponent implements OnInit {
 
-  journalSelect = false;
+  journalSelected = false;
+  title: string;
+  content: string;
 
-  constructor() { }
+  constructor(private journalService: JournalService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.journalService.addJournal({
+      id: 5,
+      title: this.title,
+      content: this.content,
+      date: new Date()
+    });
   }
 }
