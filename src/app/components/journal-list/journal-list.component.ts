@@ -9,12 +9,12 @@ import { JournalService } from 'src/app/services/journal.service';
 })
 export class JournalListComponent implements OnInit {
 
-  journals: Journal[];
+  journals: object;
+  journalKeys = Object.keys;
 
   constructor(private journalService: JournalService) { }
 
   ngOnInit() {
     this.journals = this.journalService.getJournals();
   }
-
 }

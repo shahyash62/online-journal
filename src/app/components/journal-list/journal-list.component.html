@@ -1,13 +1,14 @@
-<div class="bg-light text-dark rounded" id="journal-list">
-    <ul *ngFor="let journal of journals" class="list-group">
+<div *ngIf="journalKeys(journals).length > 0" class="bg-light text-dark rounded" id="journal-list">
+    <ul *ngFor="let key of journalKeys(journals)" class="list-group">
         <a id="journal-links">
             <li class="list-group-item h5 delay-2" id="journal-title">
-                {{ journal.title }}
+                {{ journals[key].title }}
             </li>
             <ul class="list-group-item delay-2">
-                <li class="list-group-item delay-2" id="journal-content">{{ journal.content }}</li>
-                <li class="list-group-item delay-2">{{ journal.date | date:'medium'}}</li>
+                <li class="list-group-item delay-2" id="journal-content">{{ journals[key].content }}</li>
+                <li class="list-group-item delay-2">{{ journals[key].date | date:'medium'}}</li>
             </ul>
         </a>
     </ul>
 </div>
+<p *ngIf="journalKeys(journals).length == 0" class="h4">Journal is empty</p>
