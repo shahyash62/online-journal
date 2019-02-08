@@ -1,6 +1,6 @@
 <div *ngIf="journalKeys(journals).length > 0" class="bg-light text-dark rounded" id="journal-list">
     <ul *ngFor="let key of journalKeys(journals)" class="list-group">
-        <a id="journal-links">
+        <a [class.selected-item]="selectedId == key" (click)="onSelect(key)" id="journal-links">
             <li class="list-group-item h5 delay-2" id="journal-title">
                 {{ journals[key].title }}
             </li>
