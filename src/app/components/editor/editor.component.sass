@@ -10,8 +10,10 @@
         width: 100%
 
 #flex-child-buttons
-    flex-grow: 0
+    flex-shrink: 0
 
+button
+    margin-left: 3px
 
 #journal-textarea
     width: 100%
@@ -23,3 +25,17 @@ form
     display: flex
     flex-direction: column
     height: 100%
+
+@media only screen and (min-width: 576px)
+    button
+        margin-left: 10px
+    #add-button::before
+        content: "Add Entry"
+    #delete-button::after
+        content: "Delete Entry"
+    #update-button::after
+        content: "Update Entry"
+    #cancel-button::after
+        content: "Cancel Update"
+    i
+        display: none

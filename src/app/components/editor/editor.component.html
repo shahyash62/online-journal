@@ -4,10 +4,10 @@
             <input required [(ngModel)]="title" name="title" type="text" class="border border-left-0 border-right-0 border-top-0 border-dark text-dark h4" placeholder="Enter Journal Title">
         </div>
         <div id="flex-child-buttons">
-            <button (click)="onSubmit(false)" [disabled]="title.length == 0 || content.length == 0" *ngIf="!journalSelected" class="btn btn-outline-dark btn-sm ml-3">Add Entry</button>
-            <button (click)="onSubmit(true)" *ngIf="journalSelected" [disabled]="title.length == 0 || content.length == 0" class="btn btn-outline-dark btn-sm ml-3">Update Entry</button>
-            <button (click)="clearState()" *ngIf="journalSelected" class="btn btn-outline-dark btn-sm ml-3">Cancel Update</button>
-            <button (click)="onDelete()" [disabled]="title.length == 0 || content.length == 0" *ngIf="journalSelected" class="btn btn-outline-dark btn-sm ml-3">Delete Entry</button>
+            <button (click)="onSubmit(false)" [disabled]="title.length == 0 || content.length == 0" *ngIf="!journalSelected" class="btn btn-outline-dark btn-sm" id="add-button"><i class="fas fa-plus"></i></button>
+            <button (click)="onSubmit(true)" *ngIf="journalSelected" [disabled]="title.length == 0 || content.length == 0" class="btn btn-outline-dark btn-sm" id="update-button"><i class="fas fa-save"></i></button>
+            <button (click)="clearState()" *ngIf="journalSelected" class="btn btn-outline-dark btn-sm" id="cancel-button"><i class="fas fa-arrow-circle-left"></i></button>
+            <button (click)="onDelete()" [disabled]="title.length == 0 || content.length == 0" *ngIf="journalSelected" class="btn btn-outline-dark btn-sm" id="delete-button"><i class="fas fa-trash"></i></button>
         </div>
     </div>
     <textarea required [(ngModel)]="content" name="content" id="journal-textarea" class="rounded text-dark h-100"></textarea>
